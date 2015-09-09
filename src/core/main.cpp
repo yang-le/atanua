@@ -190,8 +190,8 @@ void process_events()
 
 
             // if key is ASCII, accept it as character input
-            //if ((event.key.keysym.unicode & 0xFF80) == 0)
-            //    gUIState.keychar = event.key.keysym.unicode & 0x7f;
+            if (event.key.keysym.sym >= 32 && event.key.keysym.sym <= 127)
+                gUIState.keychar = event.key.keysym.sym;
             break;
         case SDL_KEYUP:
             gUIState.keymod = event.key.keysym.mod;
